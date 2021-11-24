@@ -21,16 +21,14 @@ drawings:
   persist: false
 ---
 
-# <Logo />
+# 
 
 <div class="pt-12">
-  <div class="text-red-500">
-    无需离开您的HTML，即可快速建立现代网站。
-  </div>
-  <div @click="$slidev.nav.next" class="p-2 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </div>
+  <Logo />
 
+  <div class="text-4xl text-light-blue-400 my-16 rounded cursor-pointer tracking-widest transition-all duration-500" hover="text-blue-500 bg-opacity-10" @click="$slidev.nav.next">
+    如何专注于HTML <carbon:arrow-right class="inline"/>
+  </div>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
@@ -49,17 +47,85 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-# What is Tailwind CSS?
+# About Me
 
-<p class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">Tailwind CSS 是一个功能类优先的 CSS 框架，它集成了诸如 <code class="font-mono text-gray-900 font-bold ">flex</code>, <code class="font-mono text-gray-900 font-bold ">pt-4</code>, <code class="font-mono text-gray-900 font-bold ">text-center</code> 和 <code class="font-mono text-gray-900 font-bold ">rotate-90</code> 这样的的类，它们能直接在脚本标记语言中组合起来，构建出任何设计。</p>
+<div class="w-full relative mt-6">
+  <div class="relative w-40 h-40">
+    <img
+      v-motion
+      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-square.png"
+    />
+    <img
+      v-motion
+      :initial="{ y: 500, x: -100, scale: 2 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-circle.png"
+    />
+    <img
+      v-motion
+      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
+      :enter="final"
+      class="absolute top-0 left-0 right-0 bottom-0"
+      src="https://sli.dev/logo-triangle.png"
+    />
+  </div>
 
-- 📝 **Utility-First** - focus on the content with Markdown, and then style them later
-- 🎨 **Responsive Design** - theme can be shared and used with npm packages
-- 🧑‍💻 **Hover, Focus, etc** - code highlighting, live coding with autocompletion
-- 🤹 **Adding Base Styles** - embedding Vue components to enhance your expressions
-- 🎥 **Extracting Components** - built-in recording and camera view
-- 📤 **Adding New Utilities** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Functions, Directives** - anything possible on a webpage
+  <div
+    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
+    v-motion
+    :initial="{ x: -160, opacity: 0}"
+    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
+    <div>马金萍</div>
+    <br>
+    <div class="text-2xl">高级前端开发工程师</div>
+    <div class="text-2xl">广联达上海</div>
+
+  </div>
+</div>
+
+<script setup lang="ts">
+const final = {
+  x: 0,
+  y: 0,
+  rotate: 0,
+  scale: 1,
+  transition: {
+    type: 'spring',
+    damping: 10,
+    stiffness: 20,
+    mass: 2
+  }
+}
+</script>
+
+<div
+  v-motion
+  :initial="{ x:35, y: 40, opacity: 0}"
+  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+
+[联系我](https://sli.dev/guide/animations.html#motion)
+
+</div>
+
+---
+
+# Tailwind CSS
+
+<br>
+
+<p class="max-w-screen-lg sm:leading-10 font-medium my-10 sm:mb-11">Tailwind CSS 是一个功能类优先的 CSS 框架, <a href="https://github.com/postcss/postcss">PostCSS</a>  插件，它集成了 <code class="font-mono text-gray-900 font-bold">flex</code>, <code class="font-mono text-gray-900 font-bold ">pt-4</code>, <code class="font-mono text-gray-900 font-bold ">text-center</code> 和 <code class="font-mono text-gray-900 font-bold ">rotate-90</code> 等这样的的类，它们能直接在HTML中组合起来，完成任何设计。</p>
+
+- 📝 **[Utility First](https://tailwindcss.com/docs/utility-first)** - 在原始功能类的基础上构建复杂的页面
+- 🎨 **[Responsive Design](https://tailwindcss.com/docs/responsive-design)** - 完全响应式用户界面
+- 🧑‍💻 **[Hover, Focus, etc](https://tailwindcss.com/docs/hover-focus-and-other-states)** - 使用悬停、焦点和其它状态来设置元素样式
+- 🤹 **[Adding Base Styles](https://tailwindcss.com/docs/adding-base-styles)** - 在 Tailwind 的基础上添加自己的全局基础样式
+- 🎥 **[Extracting Components](https://tailwindcss.com/docs/extracting-components)** - 处理复用并且保持功能优先项目的可维护性
+- 📤 **[Adding New Utilities](https://tailwindcss.com/docs/adding-new-utilities)** - 使用自定义功能类来扩展
+- 🛠 **[Functions, Directives](https://tailwindcss.com/docs/functions-and-directives)** - 暴露CSS的函数和指令的参考说明
 
 <br>
 <br>
@@ -85,11 +151,16 @@ h1 {
 
 ---
 
-# Utility-First
+# 专注于HTML
+
+<br>
 
 <div grid="~ cols-2 gap-4">
-  <div>
+
+<div>
 <span class="text-blue-300 py-4">before</span>
+
+### 来回切换写样式😭😭😭
 
 ```html
 <div class="chat-notification">
@@ -103,18 +174,12 @@ h1 {
 </div>
 
 <style>
-  .chat-notification {
-  }
-  .chat-notification-logo-wrapper {
-  }
-  .chat-notification-logo {
-  }
-  .chat-notification-content {
-  }
-  .chat-notification-title {
-  }
-  .chat-notification-message {
-  }
+  .chat-notification {}
+  .chat-notification-logo-wrapper {}
+  .chat-notification-logo {}
+  .chat-notification-content {}
+  .chat-notification-title {}
+  .chat-notification-message {}
 </style>
 ```
   </div>
@@ -122,8 +187,7 @@ h1 {
   <div>
     <span class="text-blue-300 py-4">now</span>
 
-<br>
-<br>
+### <span class="text-blue-600">专注于HTML🥳🥳🥳</span>
 
 ```html
 <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
@@ -136,32 +200,80 @@ h1 {
   </div>
 </div>
 ```
-  </div>
+</div>
 
 </div>
 
 ---
 
-# Navigation
+# Windi CSS
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+<div class="py-4 text-xl text-light-blue-300">
+Windi CSS 是下一代功能类优先的 CSS 框架
+</div>
 
-### Keyboard Shortcuts
+<div v-click>
+  通过扫描<code>HTML</code>与<code>CSS</code>并按需生成页面，<code>Windi CSS</code>能够在开发中提供更快的加载时间和快速的<code>HMR</code>，并且不需要在生产中<code>Purge</code>多余的样式。
+</div>
 
-|     |     |
+<br>
+
+<div grid="~ cols-2 gap-4">
+
+<div v-click>
+
+### [more Feature](https://windicss.org/features/)
+
+```js
+const moreFeature = [
+    Value Auto-infer,
+    Varient Groups,
+    Shortcuts,
+    Important Prefix,
+    Directives,
+    Attributify Mode,
+    Visual Analyzer
+]
+```
+
+</div>
+
+<div v-click>
+
+<div 
+  v-motion
+  :initial="{ x: 100 }"
+  :enter="{ x: 0 }"
+  class="inline-flex py-4 text-xl">
+完全兼容<code>tailwind 2.x</code>
+</div>
+
+```js
+const windiCSS = [
+    ...tailwindCSS,
+    ...moreFeature
+]
+```
+
+</div>
+
+</div>
+
+
+---
+
+# Compare
+
+<br>
+
+| **_TailwindCSS_** | **_WindiCSS_** |
 | --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+| 公司驱动开发 | 社区驱动开发 |
+| 依赖 **PostCSS**, **autoprefixer** | **0** 依赖 |
+| 4302 commits, 204 contributors, 364k used | 865 commits, 31 contributors, 3.4k used |
+| DX **bad** | DX **better** |
+| Reading **bad** | Reading **better** |
+| Tailwind JIT 是一个 postcss 插件，它启动文件系统观察器来扫描源代码，以便按需生成 CSS | Windi CSS 是一个独立的编译器，没有依赖项，可以在任何地方工作。 不同的构建工具/框架都有插件，DX很酷。 |
 
 ---
 layout: image-right
