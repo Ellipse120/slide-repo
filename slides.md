@@ -305,6 +305,6 @@ layout: center
 class: text-center
 ---
 
-# Learn More
+# <div>幻灯片开发工具: <blockquote class="text-4xl text-[#2B90B6]">Slidev</blockquote></div>
 
 [Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
