@@ -12,7 +12,7 @@
     "@slidev/theme-seriph": "*",
     "playwright-chromium": "^1.16.3"
   },
-  "name": "tailwindcss",
+  "name": "tw-vs-windi",
   "devDependencies": {
     "@iconify-json/uim": "^1.0.2"
   }
