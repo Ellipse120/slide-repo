@@ -115,6 +115,71 @@ const final = {
 
 ---
 
+# 专注于HTML
+
+<br>
+
+<div grid="~ cols-2 gap-4">
+
+<div>
+<span class="text-blue-300 py-4">before</span>
+
+### 来回切换写样式😭😭😭
+
+```html
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">ChitChat</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
+<style>
+  .chat-notification {}
+  .chat-notification-logo-wrapper {}
+  .chat-notification-logo {}
+  .chat-notification-content {}
+  .chat-notification-title {}
+  .chat-notification-message {}
+</style>
+```
+</div>
+
+<div v-click>
+    <span class="text-blue-300 py-4">now</span>
+
+### <span class="text-blue-600">专注于HTML😍😍😍</span>
+
+```html
+<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+  <div class="flex-shrink-0">
+    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-gray-500">You have a new message!</p>
+  </div>
+</div>
+```
+</div>
+
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# CSS In JS, Using Atomic CSS.
+
+<div class="text-blue-500 hover:(text-white bg-blue-400) transition-all py-4 text-2xl cursor-pointer rounded">TailwindCSS</div>
+<div class="text-blue-500 hover:(text-white bg-blue-400) transition-all py-4 text-2xl cursor-pointer rounded">WindiCSS</div>
+
+---
+
 # Tailwind CSS
 
 <br>
@@ -150,61 +215,6 @@ h1 {
   -moz-text-fill-color: transparent;
 }
 </style>
-
----
-
-# 专注于HTML
-
-<br>
-
-<div grid="~ cols-2 gap-4">
-
-<div>
-<span class="text-blue-300 py-4">before</span>
-
-### 来回切换写样式😭😭😭
-
-```html
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">ChitChat</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
-
-<style>
-  .chat-notification {}
-  .chat-notification-logo-wrapper {}
-  .chat-notification-logo {}
-  .chat-notification-content {}
-  .chat-notification-title {}
-  .chat-notification-message {}
-</style>
-```
-  </div>
-
-  <div>
-    <span class="text-blue-300 py-4">now</span>
-
-### <span class="text-blue-600">专注于HTML😍😍😍</span>
-
-```html
-<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-  <div class="flex-shrink-0">
-    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div>
-    <div class="text-xl font-medium text-black">ChitChat</div>
-    <p class="text-gray-500">You have a new message!</p>
-  </div>
-</div>
-```
-</div>
-
-</div>
 
 ---
 
@@ -277,42 +287,18 @@ const windiCSS = [
 | Tailwind JIT 是一个 postcss 插件，它启动文件系统观察器来扫描源代码，以便按需生成 CSS | Windi CSS 是一个独立的编译器，没有依赖项，可以在任何地方工作。 不同的构建工具/框架都有插件，DX很酷。 |
 | 商业化资源: Refactoring UI, tailwindUI, headlessUI, heroicons | Poor |
 ---
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+layout: image
+image: https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
 ---
 
-# Code
+# **Coding**
 
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+<div class="mt-20 py-8 text-6xl text-white">
+Show Me The Code
+<button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:(text-white bg-blue-600 opacity-80)">
+  <carbon:edit />
+</button>
+</div>
 
 ---
 layout: center
